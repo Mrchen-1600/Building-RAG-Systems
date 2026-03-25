@@ -1,1 +1,5 @@
 /.idea/
+/articles_demo/demo-01-naive-rag/target/
+/articles_demo/demo-01-naive-rag/demo-01-naive-rag.iml
+/articles_demo/demo-01-naive-rag/elasticsearch.http
+/articles_demo/demo-01-naive-rag/src/main/resources/application.yml

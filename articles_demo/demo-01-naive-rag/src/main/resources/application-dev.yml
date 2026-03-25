@@ -1,0 +1,36 @@
+# DashScope API Configuration
+dashscope:
+  api-key: "your-actual-api-key-here"
+  embedding-model: "text-embedding-v3"
+  chat-model: "qwen-max"
+  rerank-model: "gte-rerank"
+  rerank-api-url: "https://dashscope.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank"
+
+# Elasticsearch Configuration
+elasticsearch:
+  host: "localhost"
+  port: 9200
+  scheme: "http"
+  index-name: "rag_demo_index"
+
+# Document Chunking Configuration
+chunking:
+  fixed:
+    chunk-size: 200
+    overlap: 0
+  recursive:
+    max-chunk-size: 200
+    overlap-size: 30
+  semantic:
+    similarity-threshold: 0.7
+
+# Retrieval Configuration
+retrieval:
+  max-results: 10
+  top-k: 5
+
+# System Configuration
+system:
+  project-dir: "E:/java_project/Building-RAG-Systems/articles_demo/demo-01-naive-rag"
+  wait-time-ms: 2000
+  user-query: "RAG 技术是什么？深度学习时代哪一年开启？"
