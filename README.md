@@ -10,7 +10,7 @@
 本项目按照“理论 -> 配套demo -> 系统级实践”的逻辑组织，主要包含以下三个核心模块：
 
 ```text
-📦 RAG-Mastery
+📦 Building-RAG-Systems
  ┣ 📂 articles         # 📖 核心知识库：RAG 理论解析、架构设计及痛点解决方案
  ┣ 📂 articles_demo    # 💻 Demo代码：与文章配套的开箱即用 Demo 代码
  ┗ 📂 project          # 🏗️ 系统级项目：融合所有知识点的全功能系统架构
