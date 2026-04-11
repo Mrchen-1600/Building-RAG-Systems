@@ -3,3 +3,9 @@
 /articles_demo/demo-01-naive-rag/demo-01-naive-rag.iml
 /articles_demo/demo-01-naive-rag/elasticsearch.http
 /articles_demo/demo-01-naive-rag/src/main/resources/application.yml
+/articles_demo/demo-02-critical-issues/.idea/
+/articles_demo/demo-02-critical-issues/target/
+/articles_demo/demo-02-critical-issues/demo-02-critical-issues.iml
+/articles_demo/demo-02-critical-issues/demo-02-critical-issues1.iml
+/articles_demo/demo-02-critical-issues/elasticsearch.http
+/articles_demo/demo-02-critical-issues/src/main/resources/application.yml

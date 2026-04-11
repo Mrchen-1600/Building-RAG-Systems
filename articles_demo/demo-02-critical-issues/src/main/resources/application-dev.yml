@@ -1,0 +1,94 @@
+# DashScope API Configuration
+dashscope:
+  api-key: ""
+  embedding-model: "text-embedding-v3"
+  chat-model: "qwen-flash"
+  rerank-model: "gte-rerank"
+  rerank-api-url: "https://dashscope.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank"
+  fast-chat-model: "qwen-turbo"  # 用于快速处理的小模型
+
+# MySQL Database Configuration
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/rag_system?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # 自动更新表结构
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# Elasticsearch Configuration
+elasticsearch:
+  host: "localhost"
+  port: 9200
+  scheme: "http"
+  index-name: "rag_critical_demo_index"
+
+# Document Chunking Configuration
+chunking:
+  recursive:
+    max-chunk-size: 200
+    overlap-size: 30
+  parent-child:
+    parent-max-size: 1000
+    child-max-size: 200
+  sentence-window:
+    window-size: 5  # 前后各2句 + 命中句
+
+# Retrieval Configuration
+retrieval:
+  max-results: 10
+  top-k: 5
+  self-rag:
+    max-retries: 5
+    fallback-strategy: "graceful_decline"  # graceful_decline, web_search, human_handoff
+
+# Intent Routing Configuration
+intent-routing:
+  enable-llm-router: true
+  enable-semantic-router: false  # 两种路由方式二选一
+  semantic-threshold: 0.7
+
+# Memory Configuration
+memory:
+  short-term:
+    max-rounds: 3  # 超过3轮触发摘要
+  long-term:
+    update-interval: 5  # 每次摘要时判断是否更新长期记忆
+
+# Text2SQL Configuration
+text2sql:
+  database-schema: "rag_system"
+  enabled-tables: "structured_knowledge, user_profile, conversation_archive"
+
+# HyDE Configuration
+hyde:
+  enabled: true
+  trigger-keywords: ["报告", "文档", "总结", "分析", "技术文档", "撰写"]
+
+# RAPTOR Configuration
+raptor:
+  enabled: true
+  async-build: true
+  max-levels: 5
+
+# System Configuration
+system:
+  project-dir: "E:/java_project/Building-RAG-Systems/articles_demo/demo-02-critical-issues"
+  wait-time-ms: 2000
+  user-query: "RAG 技术是什么？深度学习时代哪一年开启？"
+
+# Skill Configuration
+skill:
+  base-path: "classpath:skills"
+  lazy-load-enabled: true

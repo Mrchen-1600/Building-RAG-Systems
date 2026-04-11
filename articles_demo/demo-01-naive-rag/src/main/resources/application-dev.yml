@@ -2,7 +2,7 @@
 dashscope:
   api-key: "your-actual-api-key-here"
   embedding-model: "text-embedding-v3"
-  chat-model: "qwen-max"
+  chat-model: "qwen-flash"
   rerank-model: "gte-rerank"
   rerank-api-url: "https://dashscope.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank"
 

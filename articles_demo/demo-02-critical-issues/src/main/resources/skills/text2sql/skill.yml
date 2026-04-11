@@ -1,0 +1,59 @@
+# Text2SQL Skill 配置文件
+
+name: "Text2SQL"
+description: "将自然语言问题转换为SQL查询并执行，适用于结构化数据查询"
+version: "1.0.0"
+author: "RAG System"
+
+# Skill 触发条件
+trigger:
+  # 触发关键词
+  keywords:
+    - "查询"
+    - "统计"
+    - "多少"
+    - "记录"
+    - "数据"
+    - "数据库"
+    - "SQL"
+  # 意图类型
+  intentTypes:
+    - "STRUCTURED_QUERY"
+
+# Skill 加载策略
+loading:
+  # 是否懒加载完整文档（仅当确认使用该 skill 时才加载完整 skills.md）
+  lazyLoadFullDoc: true
+  # 是否需要动态加载 refs 和 scripts
+  enableRefs: true
+  enableScripts: false
+
+# 数据库配置
+database:
+  schema: "rag_system"
+  tables:
+    - "structured_knowledge"
+    - "user_profile"
+    - "conversation_archive"
+    - "document_metadata"
+    - "sentence_metadata"
+    - "parent_child_chunk"
+    - "raptor_tree"
+    - "self_rag_evaluation"
+
+# 安全配置
+security:
+  # 允许的 SQL 操作类型
+  allowedOperations:
+    - "SELECT"
+  # 是否启用 SQL 注入检查
+  enableInjectionCheck: true
+  # 最大返回记录数
+  maxLimit: 100
+
+# 性能配置
+performance:
+  # 超时时间（毫秒）
+  timeoutMs: 30000
+  # 是否启用缓存
+  enableCache: false
